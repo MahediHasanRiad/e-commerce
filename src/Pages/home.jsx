@@ -6,24 +6,25 @@ import PopularItem from "../Components/home/popular-item";
 import Product from "../Components/home/product";
 import productsData from "../data/popularItems";
 
+
 function Home() {
+
   return (
-    <section>
-      {/* Top section start */}
-      <section className="w-11/12 max-w-7xl mx-auto rounded-lg">
-        <section className="flex">
-          <section className="w-1/6">
+    <section className="bg-white">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top section start: Menu & Slider */}
+        <section className="flex flex-col lg:flex-row gap-4 pt-4">
+          <section className="hidden md:block lg:w-1/4 xl:w-1/6">
             <Menu />
           </section>
-          <section className="flex-grow">
+
+          <section className="flex-grow w-full">
             <Slider />
           </section>
         </section>
 
-        {/* Top section end */}
-
-        {/* service section start */}
-        <section className="grid grid-cols-4 gap-4 mt-12">
+        {/* --- Service Section --- */}
+        <section className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 md:mt-12">
           <Service
             icon={ShoppingBasket}
             text={"+15000 products to shop from"}
@@ -32,12 +33,14 @@ function Home() {
           <Service icon={Motorbike} text={"Get your delivery within 1 hour"} />
           <Service icon={PiggyBank} text={"Get offers that Save Money"} />
         </section>
-        {/* service section end */}
 
-        {/* Popular Categories start  */}
-        <section>
-          <h1 className="my-8 text-2xl">Popular Category:</h1>
-          <div className="grid grid-cols-4 gap-4 mt-8">
+        {/* --- Popular Categories --- */}
+        <section className="mt-12">
+          <h1 className="mb-6 text-2xl font-bold text-gray-800">
+            Popular Category:
+          </h1>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {productsData.map((product, index) => (
               <PopularItem
                 key={index}
@@ -47,12 +50,14 @@ function Home() {
             ))}
           </div>
         </section>
-        {/* Popular Categories end  */}
 
-        {/* best selling product start  */}
-        <section>
-          <h1 className="my-8 text-2xl">Popular Items: </h1>
-          <div className="grid grid-cols-5 gap-4 mt-8">
+        {/* --- Best Selling Product / Popular Items --- */}
+        <section className="mt-12">
+          <h1 className="mb-6 text-2xl font-bold text-gray-800">
+            Popular Items:{" "}
+          </h1>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {productsData.map((product, index) => (
               <Product
                 key={index}
@@ -64,12 +69,14 @@ function Home() {
             ))}
           </div>
         </section>
-        {/* best selling product end */}
 
-        {/* weekend deals start */}
-        <section>
-          <h1 className="my-8 text-2xl">Weeken Deals: </h1>
-          <div className="grid grid-cols-5 gap-4 mt-8">
+        {/* --- Weekend Deals --- */}
+        <section className="mt-12">
+          <h1 className="mb-6 text-2xl font-bold text-gray-800">
+            Weeken Deals:{" "}
+          </h1>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {productsData.map((product, index) => (
               <Product
                 key={index}
@@ -81,12 +88,13 @@ function Home() {
             ))}
           </div>
         </section>
-        {/* weekend deals end */}
 
-        {/* happy hours start */}
-        <section>
-          <h1 className="my-8 text-2xl">Happy Hours: </h1>
-          <div className="grid grid-cols-5 gap-4 mt-8">
+        {/* --- Happy Hours --- */}
+        <section className="mt-12 mb-12">
+          <h1 className="mb-6 text-2xl font-bold text-gray-800">
+            Happy Hours:
+          </h1>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {productsData.map((product, index) => (
               <Product
                 key={index}
@@ -98,7 +106,6 @@ function Home() {
             ))}
           </div>
         </section>
-        {/* happy hours end */}
       </section>
     </section>
   );
